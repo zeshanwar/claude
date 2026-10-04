@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mysql2ch"
+version = "0.1.0"
+description = "Convert MySQL CREATE TABLE statements to ClickHouse DDL (with optional CDC columns)"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "Zeeshan Anwar"}]
+requires-python = ">=3.9"
+keywords = ["mysql", "clickhouse", "ddl", "schema", "migration", "cdc", "debezium"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Database",
+    "Environment :: Console",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+mysql2ch = "mysql2ch.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/zeshanwar/claude"
+
+[tool.setuptools]
+packages = ["mysql2ch"]
